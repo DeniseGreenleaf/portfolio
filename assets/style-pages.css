@@ -1,0 +1,646 @@
+:root {
+    --font-size-base: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #003E00;
+     background: url("img/greenleaf.jpg") no-repeat center center fixed;
+    /* width: 100%; */
+    /* height: auto;
+    overflow: auto;  */
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+    background-color: #003E00; 
+    border-bottom: 2px solid rgba(129, 186, 67, 0.7);
+    box-shadow: 0 4px 30px -2px #003E00;
+    position:relative;
+    z-index: 100;
+}
+
+.nav-links a {
+    color: #B0EE6F; 
+    background-color: #003E00;
+    text-decoration: none; /* Ta bort understrykning */
+    padding: 1rem; /* Lägg till lite padding för bättre klickbarhet */
+    font-size: 2rem;
+    font-weight: 555;
+}
+
+.nav-links a:hover {
+    color: #81BA43; 
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none; /* Döljer hamburgermenyn som standard */
+  
+    color: #B0EE6F; 
+}
+
+.hamburger.active {
+    content: '\00D7'; /* Unicode för X-symbol */
+}
+
+body.about-page {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #003E00;
+    min-height: 100vh;
+  }
+  
+   Huvudlayout med grid 
+   .about-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* vänster 2/3, höger 1/3 */
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+  }
+  
+  .about-hero .about-large {
+    font-size: 18rem; 
+    font-weight: 900;
+    color: #B0EE6F;
+    margin: 0;
+    line-height: 1;
+  }
+
+   .me-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8rem;             /* mellanrum mellan ME och texten */
+  margin-top: 2rem;
+}
+
+.me-text {
+  font-size: 18em; 
+  font-weight: 900;
+  color: #81BA43;
+  line-height: 1;
+}
+
+  .text-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin-top: 1.5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #B0EE6F;
+    border-radius: 8px;
+    flex: 1;
+    max-width: 700px;
+   
+  }
+  
+
+/* Hero-del */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 500px;
+}
+
+.hero-image img {
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin: 5rem;
+  padding: 1rem;
+}
+
+/* Korten */
+.about-card {
+    max-width: 90rem;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 auto 2rem auto;
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.about-card:hover {
+  background: rgba(43, 128, 33, 0.726);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: translateY(-5px);
+}
+
+/* Bilder i korten */
+.about-images {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-images img {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  max-height: 400px;
+  max-width: auto;
+  border-radius: 10px;
+  object-fit: contain;
+ 
+}
+
+/* Text i korten */
+.about-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  max-width: 50%;
+}
+
+
+/*WORKING ON */
+
+.current-project {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.project-image {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.02);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(61, 220, 132, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.project-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+    margin-top: 1.5rem;
+}
+
+.tech-badge {
+    background: #3DDC84;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    display: inline-block;
+}
+
+/*---------- PROJECTS------- */
+/* Projects Page Specific Styles */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+   
+    padding: 2rem;
+    min-height: calc(100vh - 120px);
+}
+
+
+.projects-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight:700;
+    color: #f7f7f7;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.projects-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3DDC84, #2ECC71);
+    border-radius: 2px;
+}
+
+/* .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+} */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    cursor: pointer;
+
+    /*glasmorphism-effekt */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Hover-effekt: blir solid vitt */
+.project-card:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.project-image.placeholder-1 {
+    background: linear-gradient(135deg, #3DDC84 0%, #2ECC71 100%);
+}
+
+.project-image.placeholder-2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.project-image.placeholder-3 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.project-image.placeholder-4 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.project-image.placeholder-5 {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.project-image.placeholder-6 {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px); /* blur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content a {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #3DDC84;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-content a:hover {
+    color: #2ECC71;
+    text-decoration: underline;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+}
+
+.project-description {
+    color: #f4feff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background: #ecf0f1;
+    color: #2c3e50;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-in-progress {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-planned {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+
+.footer {
+    display: flex; 
+    flex-direction: column;
+    position: static;
+    background-color: #003E00;
+    height: auto;
+    align-items: flex-start; /* Vänsterställ allt */
+    padding: 2rem;
+    color: white;
+    border-top: 2px ridge rgba(129, 186, 67);
+    box-shadow: 0 4px 2px -2px gray;
+    width: 100%;
+}
+
+.contact-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #B0EE6F;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-item i {
+    font-size: 2.5rem;
+    color: #B0EE6F;
+    width: 25px; /* Fast bredd så allt blir i linje */
+}
+
+.contact-item a,
+.contact-item span {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contact-item a:hover {
+    color: #B0EE6F;
+}
+
+.footer-text {
+    margin-top: auto;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 1rem;
+    }
+    
+    .projects-title {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+  
+  /* Mobilanpassning */
+  @media (max-width: 768px) {
+
+     /* Visa hamburgermenyn och dölj nav-länkar */
+    .hamburger {
+        display: block; /* Visa hamburgermenyn i mobilvyn */
+        position: relative;
+        z-index: 1000;
+        font-size: 3.75rem;
+    }
+
+
+    .nav-active .hamburger {
+        content: '\00D7'; /* Visa kryss när menyn är öppen */
+    }
+
+    .nav-links {
+        display: none; /* Dölj länkarna i mobilvyn */
+        flex-direction: column; /* Länkarna i en kolumn när de visas */
+         background-color: #003E00; 
+        position: absolute;
+        top: 12rem; /* Placering under navbaren */
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-active {
+        display: flex; /* När hamburgermenyn aktiveras visas länkarna */
+        background-color: #003E00;
+        z-index: 1000;
+    }
+
+     .nav-links a {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #66C800;
+        color: #B0EE6F;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .about-container, .fun-container, .family-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .about-large,
+    .fun-left, .fun-large, .family-right, .family-large {
+       font-size: 6rem;
+    margin-bottom: 1rem;
+    }
+
+    
+
+    .fun-right, .family-left {
+    display: flex;
+    flex-direction: column; /* stapla text över bild */
+    align-items: center;
+  }
+  
+    .me-text {
+      font-size: 5rem;
+    }
+  
+    .me-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .text-box, .text-box.small {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  
+     .about-right img,
+  .fun-right img,
+  .family-left img {
+    width: 90%;
+    max-width: 25rem;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+
+    .fun-left .fun-large,
+  .family-right .family-large {
+    font-size: 8rem;
+    writing-mode: horizontal-tb; /* tillbaka till normal */
+    text-orientation: initial;   /* återställ */
+    text-align: center;
+  }
+
+    
+  .fun-right img,
+  .family-left img {
+    width: 80%;
+    max-width: 20rem;
+  }
+  }
+  
