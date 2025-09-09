@@ -541,7 +541,7 @@ body.about-page {
     }
 }
   
-  /* Mobilanpassning */
+   /* Mobilanpassning */
   @media (max-width: 768px) {
 
      /* Visa hamburgermenyn och dölj nav-länkar */
@@ -549,7 +549,7 @@ body.about-page {
         display: block; /* Visa hamburgermenyn i mobilvyn */
         position: relative;
         z-index: 1000;
-        font-size: 3.75rem;
+        font-size: 2rem;
     }
 
 
@@ -562,7 +562,7 @@ body.about-page {
         flex-direction: column; /* Länkarna i en kolumn när de visas */
          background-color: #003E00; 
         position: absolute;
-        top: 12rem; /* Placering under navbaren */
+        top: 4rem; /* Placering under navbaren */
         left: 0;
         width: 100%;
     }
@@ -574,7 +574,7 @@ body.about-page {
     }
 
      .nav-links a {
-        padding: 1.5rem 2rem;
+        padding: 0.5rem 1rem;
         border-bottom: 1px solid #66C800;
         color: #B0EE6F;
         text-decoration: none;
@@ -635,6 +635,20 @@ body.about-page {
   width: 100%;
   max-width: 300px;
   object-fit: cover; /* fyll rutan snyggt */
+}
+
+.footer {
+  padding: 1rem;          /* mindre padding */
+  height: auto;           /* se till att den inte dras ut */
+}
+
+.contact-item i {
+  font-size: 1.5rem;      /* mindre ikoner */
+}
+
+.contact-item a,
+.contact-item span {
+  font-size: 1rem;        /* mindre text */
 }
 
 
