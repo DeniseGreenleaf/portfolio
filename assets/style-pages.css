@@ -581,31 +581,15 @@ body.about-page {
         font-size: 1.5rem;
     }
 
-    .about-container, .fun-container, .family-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      gap: 1rem;
-    }
-  
-    .about-large,
-    .fun-left, .fun-large, .family-right, .family-large {
-       font-size: 6rem;
-    margin-bottom: 1rem;
-    }
+    /* Gör navbaren kompaktare */
+.navbar {
+  padding: 0.5rem 1rem;
+}
 
-    
-
-    .fun-right, .family-left {
-    display: flex;
-    flex-direction: column; /* stapla text över bild */
-    align-items: center;
-  }
   
     .me-text {
       font-size: 5rem;
+      margin-left: 11rem;
     }
   
     .me-row {
@@ -613,34 +597,45 @@ body.about-page {
       gap: 1rem;
     }
   
-    .text-box, .text-box.small {
-      max-width: 90%;
-      margin: 0 auto;
-    }
-  
-     .about-right img,
-  .fun-right img,
-  .family-left img {
-    width: 90%;
-    max-width: 25rem;
-    height: auto;
-    margin-top: 1rem;
-  }
+    .about-hero {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-hero .about-large,
+.me-text {
+  font-size: 4rem;   /* Mindre storlek för mobil */
+}
+
+.text-box {
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+/* Profilbild mindre och centrerad */
+.hero-image img {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
 
 
-    .fun-left .fun-large,
-  .family-right .family-large {
-    font-size: 8rem;
-    writing-mode: horizontal-tb; /* tillbaka till normal */
-    text-orientation: initial;   /* återställ */
-    text-align: center;
-  }
+/* --------- BILDER I KORTEN ---------- */
+.about-images {
+  flex-direction: column; /* stapla på mobil */
+  align-items: center;
+}
 
-    
-  .fun-right img,
-  .family-left img {
-    width: 80%;
-    max-width: 20rem;
+.about-images img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover; /* fyll rutan snyggt */
+}
+
+
   }
-  }
-  
