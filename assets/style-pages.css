@@ -544,6 +544,12 @@ body.about-page {
    /* Mobilanpassning */
   @media (max-width: 768px) {
 
+     body {
+    background-attachment: scroll;  
+    background-size: cover;         /* fyll hela skärmen */
+    background-position: center;    /* mitten av bilden */
+  }
+
      /* Visa hamburgermenyn och dölj nav-länkar */
     .hamburger {
         display: block; /* Visa hamburgermenyn i mobilvyn */
